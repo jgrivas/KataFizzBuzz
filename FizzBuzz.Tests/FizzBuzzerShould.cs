@@ -108,6 +108,17 @@ namespace FizzBuzz.Tests
             actualResult.Should().Be("Buzz");
         }
 
+        [Theory]
+        [InlineData(53)]
+        public void ReturnFizzBuzz_WhenTheNumberContains3And5(int inputNumber)
+        {
+            var fizzBuzzer = GetFizzBuzzer();
+
+            var result = fizzBuzzer.GetNumberFizzBuzzed(inputNumber);
+
+            result.Should().Be("FizzBuzz");
+        }
+
         #region Factories
         public IFizzBuzzer GetFizzBuzzer()
         {
