@@ -94,12 +94,26 @@ namespace FizzBuzz.Tests
             actualResult.Should().Be("Fizz");
         }
 
+        [Theory]
+        [InlineData(52)]
+        [InlineData(56)]
+        [InlineData(58)]
+        [InlineData(59)]
+        public void ReturnBuzz_WhenTheNumberContains5(int inputNumber)
+        {
+            var fizzBuzzer = GetFizzBuzzer();
+
+            var actualResult = fizzBuzzer.GetNumberFizzBuzzed(inputNumber);
+
+            actualResult.Should().Be("Buzz");
+        }
+
         #region Factories
         public IFizzBuzzer GetFizzBuzzer()
         {
             var divisibleByOrContaining3Filter = new DivisibleOrContainingFilter(3, "Fizz");
-            var divisibleBy5Filter = new DivisibleFilter(5, "Buzz");
-            return new FizzBuzzer(new List<IFilter> { divisibleByOrContaining3Filter, divisibleBy5Filter });
+            var divisibleByOrContaining5Filter = new DivisibleOrContainingFilter(5, "Buzz");
+            return new FizzBuzzer(new List<IFilter> { divisibleByOrContaining3Filter, divisibleByOrContaining5Filter });
         }
         #endregion
     }

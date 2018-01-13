@@ -9,8 +9,8 @@ namespace FizzBuzz
         public static void Main(string[] args)
         {
             var divisibleByOrContaining3Filter = new DivisibleOrContainingFilter(3, "Fizz");
-            var divisibleBy5Filter = new DivisibleFilter(5, "Buzz");
-            var fizzBuzzer = new FizzBuzzer(new List<IFilter> { divisibleByOrContaining3Filter, divisibleBy5Filter });
+            var divisibleByOrContaining5Filter = new DivisibleOrContainingFilter(5, "Buzz");
+            var fizzBuzzer = new FizzBuzzer(new List<IFilter> { divisibleByOrContaining3Filter, divisibleByOrContaining5Filter });
             var outputWriter = new ConsoleWriter();
             var app = new App(fizzBuzzer: fizzBuzzer, outputWriter: outputWriter);
 
