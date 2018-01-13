@@ -17,9 +17,7 @@
         public void Run()
         {
             for (int number = StartNumber; number <= EndNumber; number++)
-            {
                 ProcessNumber(number);
-            }
         }
 
         private void ProcessNumber(int number)
