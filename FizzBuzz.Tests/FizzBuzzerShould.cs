@@ -27,5 +27,15 @@ namespace FizzBuzz.Tests
 
             result.Should().Be("Fizz");
         }
+
+        [Fact]
+        public void ReturnBuzz_WhenTheNumberIs5()
+        {
+            var fizzBuzzer = new FizzBuzzer();
+
+            var result = fizzBuzzer.GetNumberFizzBuzzed(5);
+
+            result.Should().Be("Buzz");
+        }
     }
 }

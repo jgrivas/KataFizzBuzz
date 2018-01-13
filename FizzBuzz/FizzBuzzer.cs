@@ -4,7 +4,10 @@
     {
         public string GetNumberFizzBuzzed(int number)
         {
-            return "Fizz";
+            if (number % 3 == 0)
+                return "Fizz";
+
+            return "Buzz";
         }
     }
 }
