@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FizzBuzz.Filters;
+using System;
+using System.Collections.Generic;
 
 namespace FizzBuzz
 {
@@ -6,7 +8,9 @@ namespace FizzBuzz
     {
         public static void Main(string[] args)
         {
-            var fizzBuzzer = new FizzBuzzer();
+            var divisibleBy3Filter = new DivisibleFilter(3, "Fizz");
+            var divisibleBy5Filter = new DivisibleFilter(5, "Buzz");
+            var fizzBuzzer = new FizzBuzzer(new List<IFilter> { divisibleBy3Filter, divisibleBy5Filter });
             var outputWriter = new ConsoleWriter();
             var app = new App(fizzBuzzer: fizzBuzzer, outputWriter: outputWriter);
 
