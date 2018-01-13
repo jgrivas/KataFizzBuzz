@@ -2,6 +2,9 @@
 {
     public class App
     {
+        private const int StartNumber = 1;
+        private const int EndNumber = 100;
+
         private readonly IFizzBuzzer _fizzBuzzer;
         private readonly IOutputWriter _outputWriter;
 
@@ -13,10 +16,16 @@
 
         public void Run()
         {
-            for (int number = 1; number <= 100; number++)
+            for (int number = StartNumber; number <= EndNumber; number++)
             {
-                var numberFizzBuzzed = _fizzBuzzer.GetNumberFizzBuzzed(number);
+                ProcessNumber(number);
             }
+        }
+
+        private void ProcessNumber(int number)
+        {
+            var numberFizzBuzzed = _fizzBuzzer.GetNumberFizzBuzzed(number);
+            _outputWriter.WriteLine(numberFizzBuzzed);
         }
     }
 }
