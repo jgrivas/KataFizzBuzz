@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FizzBuzz
+﻿namespace FizzBuzz
 {
     public static class Program
     {
