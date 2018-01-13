@@ -50,5 +50,18 @@ namespace FizzBuzz.Tests
 
             result.Should().Be("Buzz");
         }
+
+        [Theory]
+        [InlineData(15)]
+        [InlineData(30)]
+        [InlineData(90)]
+        public void ReturnFizzBuzz_WhenTheNumberIsDivisibleBy3AndBy5(int inputNumber)
+        {
+            var fizzBuzzer = new FizzBuzzer();
+
+            var result = fizzBuzzer.GetNumberFizzBuzzed(inputNumber);
+
+            result.Should().Be("FizzBuzz");
+        }
     }
 }

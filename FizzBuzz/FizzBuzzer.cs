@@ -1,13 +1,21 @@
-﻿namespace FizzBuzz
+﻿using FizzBuzz.Extensions;
+using System.Text;
+
+namespace FizzBuzz
 {
     public class FizzBuzzer : IFizzBuzzer
     {
         public string GetNumberFizzBuzzed(int number)
         {
-            if (number % 3 == 0)
-                return "Fizz";
+            var stringBuilder = new StringBuilder();
 
-            return "Buzz";
+            if (number.IsDivisibleBy(3))
+                stringBuilder.Append("Fizz");
+
+            if (number.IsDivisibleBy(5))
+                stringBuilder.Append("Buzz");
+
+            return stringBuilder.ToString();
         }
     }
 }
