@@ -14,8 +14,10 @@ namespace FizzBuzz
 
             if (number.IsDivisibleBy(5))
                 stringBuilder.Append("Buzz");
-
-            return stringBuilder.ToString();
+            
+            return stringBuilder.IsEmpty()
+                ? number.ToString() 
+                : stringBuilder.ToString();
         }
     }
 }

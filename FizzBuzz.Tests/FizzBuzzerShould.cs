@@ -63,5 +63,20 @@ namespace FizzBuzz.Tests
 
             result.Should().Be("FizzBuzz");
         }
+
+        [Theory]
+        [InlineData(1, "1")]
+        [InlineData(2, "2")]
+        [InlineData(4, "4")]
+        [InlineData(7, "7")]
+        [InlineData(23, "23")]
+        public void ReturnTheNumber_WhenTheNumberIsNotDivisibleNeitherBy3NorBy5(int inputNumber, string expectedResult)
+        {
+            var fizzBuzzer = new FizzBuzzer();
+
+            var actualResult = fizzBuzzer.GetNumberFizzBuzzed(inputNumber);
+
+            actualResult.Should().Be(expectedResult);
+        }
     }
 }
