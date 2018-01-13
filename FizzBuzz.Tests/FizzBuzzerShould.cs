@@ -14,5 +14,18 @@ namespace FizzBuzz.Tests
 
             result.Should().Be("Fizz");
         }
+        
+        [Theory]
+        [InlineData(6)]
+        [InlineData(9)]
+        [InlineData(333)]
+        public void ReturnFizz_WhenTheNumberIsDivisibleBy3(int inputNumber)
+        {
+            var fizzBuzzer = new FizzBuzzer();
+
+            var result = fizzBuzzer.GetNumberFizzBuzzed(inputNumber);
+
+            result.Should().Be("Fizz");
+        }
     }
 }
